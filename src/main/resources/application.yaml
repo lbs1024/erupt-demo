@@ -9,4 +9,29 @@ spring:
     open-in-view: true
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
 
+erupt-app:
+  # 登录失败几次需要验证码，值为0时标识一直需要登录验证码
+  verify-code-count: 2
+  # 登录密码是否加密传输，特征场景如：LDAP登录可关闭该功能获取密码明文
+  pwd-transfer-encrypt: true
+  # 多语言配置
+  locales: ["zh-CN","zh-TW","en-US","ja-JP"]
+erupt:
+  # 是否开启csrf防御
+  csrf-inspect: true
+  # 开启redis方式存储session，默认false，开启后需要在配置文件中添加redis配置
+  redis-session: false
+  # 附件上传存储路径，默认路径为:/opt/erupt-attachment
+  upload-path: D:\code\Exercises\java_study\erupt-demo\erupt-demo\src\main\resources\pictures
+  # 是否保留上传文件原始名称
+  keep-upload-file-name: false
+  # 登录session时长
+  upms:
+    expire-time-by-login: 60
+  # 是否开启任务调度
+  job:
+    enable: true
+  # 是否记录操作日志，默认true，该功能开启后可在[系统管理-操作日志]中查看操作日志
+  security:
+    record-operate-log: true
 
